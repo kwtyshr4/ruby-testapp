@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>メッセージ一覧</h1>
+
+<p>=== 現在のメッセージの数：<%=@greetings.count%> ===</p>
+
+<div id="greetings">
+  <% @greetings.each do |greeting| %>
+    <%= render greeting %>
+    <p>
+      <%= link_to "編集・削除", greeting %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "新規メッセージ作成", new_greeting_path %>
